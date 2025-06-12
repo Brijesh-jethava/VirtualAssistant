@@ -6,7 +6,7 @@ import img4 from '../assets/image5.png'
 import img5 from '../assets/image6.jpeg'
 import img6 from '../assets/image7.jpeg'
 import img7 from '../assets/authBg.png'
-import Card from '../component/card.jsx'
+import Card from '../component/Card.jsx'
 import { RiImageAddLine } from "react-icons/ri";
 import { useState } from 'react'
 import { useRef } from 'react'
