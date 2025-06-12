@@ -40,7 +40,7 @@ const Home = () => {
     if(!isSpeakingRef.current && !isRecognitionRef.current){ 
     try{
      recognitionRef.current?.start()
-     console.log('Recognition requested starr')
+   
     }catch(error){
       if(error.name !== 'InvalidStateError'){
         console.error("Start error",error)
@@ -129,7 +129,7 @@ const Home = () => {
       if(isMounted && !isSpeakingRef.current && !isRecognitionRef.current){
         try{
           recognition.start();
-          console.log('Recognition requested to start')
+     
         }catch(e){
           if(e.name !== 'InvalidStateError'){
             console.error(e);
@@ -139,13 +139,13 @@ const Home = () => {
     },1000);
 
     recognition.onstart = () => {
-      console.log("Recognition started");
+      
       isRecognitionRef.current = true;
       setListening(true);
     }
 
     recognition.onend = () => {
-      console.log("Recognition ended");
+      
       isRecognitionRef.current = false;
       setListening(false);
 
@@ -155,7 +155,7 @@ const Home = () => {
         if(isMounted){
           try{
             recognition.start();
-            console.log("Recognition requested to start");
+            
           }catch(e){
             if(e.name !== 'InvalidStateError')
               {
@@ -179,7 +179,7 @@ const Home = () => {
          if(isMounted){
            try{ 
                recognition.start();
-               console.log("Recognition requested to start");
+              
            }catch(e){
             if(e.name !== 'InvalidStateError')
               console.error(e);
@@ -191,9 +191,9 @@ const Home = () => {
 
 
     recognition.onresult = async(e) =>{
-      console.log("Speech Recognition Result:", e);
+      
       const transcript = e.results[e.results.length - 1][0].transcript.trim();
-      console.log("Transcript:", transcript);
+      
 
       if(transcript.toLowerCase().includes(userData.assistantName.toLowerCase()))
       {
@@ -203,7 +203,7 @@ const Home = () => {
         isRecognitionRef.current = false;
         setListening(false);
         const data =  await getGeminiResponse(transcript);
-        console.log("Gemini Response:", data);
+        
         handleCommand(data)
         setAiText(data.response)
         setUserText("")

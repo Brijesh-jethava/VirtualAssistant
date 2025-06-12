@@ -35,7 +35,7 @@ const SignUp = () => {
     
     const onSubmit = async(e)=>{
             e.preventDefault();
-            console.log(formData);
+            
             
             setErr("")
             setLoading(true)

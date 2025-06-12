@@ -74,7 +74,7 @@ Now your user has asked you: "${command}"
       return "Sorry, I didn't understand that.";
     }
 
-    console.log("Gemini API Response:", reply);
+   
     return reply;
 
   } catch (error) {

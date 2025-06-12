@@ -26,14 +26,14 @@ const Customize2 = () => {
             formData.append('imageUrl', selectedImage);
          }
          const result = await axios.post(`${serverUrl}/api/user/update`,formData,{withCredentials:true})
-         console.log(" handleUpdateAssistant(customize2) Result:", result.data);
+        
          setLoading(false);
          setUserData(result.data);
          navigate('/');
 
         }catch(error){
           setLoading(false);
-          console.log("Error in handleUpdateAssistant:", error);
+          console.log("Error:", error);
         }
     }
     

@@ -33,7 +33,7 @@ const SignIn = () => {
     
     const onSubmit = async(e)=>{
             e.preventDefault();
-            console.log(formData);
+          
             
             setErr("")
             setLoading(true);
