@@ -34,8 +34,8 @@ export const sighnup = async(req,res)=>{
     res.cookie('token', token, {
         httpOnly: true,
         maxAge: 5 * 24 * 60 * 60 * 1000, // 1 day
-        sameSite: 'strict',
-        secure:false
+        sameSite: 'None',
+        secure:true
     });
 
      //user.save();
@@ -73,8 +73,8 @@ export const login = async(req,res)=>{
     res.cookie('token', token, {
         httpOnly: true,
         maxAge: 5 * 24 * 60 * 60 * 1000, // 1 day
-        sameSite: 'strict',
-        secure:false
+        sameSite: 'None',
+        secure:true
     });
 
      //user.save();
